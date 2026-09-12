@@ -1,0 +1,20 @@
+{
+  "toolchain": ["Codex browser control", "Chrome", "rendered screenshot inspection"],
+  "targetUrl": "https://planar-truck-361704.uc.r.appspot.com/",
+  "apiMode": "deployed real API-backed application",
+  "roles": ["controlled administrator", "controlled support participants from prior current campaign evidence"],
+  "viewports": ["360x800", "390x844", "768x1024", "1024x768", "1280x800", "1440x900"],
+  "scenarios": {
+    "SUP-001": "FAIL",
+    "SUP-002": "FAIL",
+    "SUP-003": "FAIL",
+    "SUP-004": "BLOCKED",
+    "SUP-005": "FAIL"
+  },
+  "resultCells": 30,
+  "pending": 0,
+  "mocksUsed": false,
+  "visualReview": "All primary Support Operations surfaces rendered at all six sizes. No global page overflow was detected; mobile Support Queue and desktop Feedback Operations were inspected as rendered images.",
+  "consoleErrors": [],
+  "privacy": "Credentials, mailbox contents, participant addresses and raw private screenshots are excluded from this public artifact."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "support-operations-uat-report",
+  "private": true,
+  "scripts": { "test": "node --test report.test.cjs" },
+  "devDependencies": { "c8": "^10.1.3", "jsdom": "^26.1.0" }
+}

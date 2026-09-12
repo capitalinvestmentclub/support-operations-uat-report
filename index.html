@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Support Operations Chrome UAT findings and coverage."
+    />
+    <title>Support Operations · Chrome UAT findings</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2312211d'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-size='18' font-family='monospace' fill='white'%3ECIC%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css?v=4">
+  </head>
+  <body>
+    <a class="skip-link" href="#findings-list">Skip to findings</a>
+
+    <header class="topbar">
+      <a class="brand" href="https://github.com/capitalinvestmentclub/support-operations-uat-report">
+        <span class="brand-mark" aria-hidden="true">CIC</span>
+        <span>
+          <strong>Review record</strong>
+          <small>capitalinvestmentclub / webapp</small>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <button class="quiet-button" id="export-button" type="button">Export CSV</button>
+        <button class="primary-button" id="share-button" type="button">Copy view link</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="overview" aria-labelledby="page-title">
+        <div class="overview-copy">
+          <p class="eyebrow">Support Operations Chrome · Living review artifact</p>
+          <h1 id="page-title">Support Operations UAT findings</h1>
+          <p class="lede">
+            Results from the five-scenario Support Operations campaign in Google Chrome
+            across six viewport sizes, including observed defects and fix-ready evidence.
+          </p>
+          <div class="metadata" id="metadata"></div>
+        </div>
+        <div class="release-signal" aria-label="Current release assessment">
+          <span class="signal-pulse" aria-hidden="true"></span>
+          <div>
+            <small>Release signal</small>
+            <strong>Not go-live ready · 3/10</strong>
+            <span id="release-reason">Three high findings remain open; one scenario is blocked by missing controlled prerequisites.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Finding summary">
+        <button class="metric" type="button" data-metric-filter="all">
+          <strong id="metric-total">—</strong><span>Tracked</span>
+        </button>
+        <button class="metric metric-danger" type="button" data-metric-filter="urgent">
+          <strong id="metric-urgent">—</strong><span>Critical + high</span>
+        </button>
+        <button class="metric" type="button" data-metric-filter="open">
+          <strong id="metric-open">—</strong><span>Open</span>
+        </button>
+        <button class="metric metric-success" type="button" data-metric-filter="fixed">
+          <strong id="metric-fixed">—</strong><span>Fixed</span>
+        </button>
+        <button class="metric" type="button" data-metric-filter="closed">
+          <strong id="metric-closed">—</strong><span>Closed / clarified</span>
+        </button>
+      </section>
+
+<div class="campaign-note"><strong>Support Operations run · 5/5 scenarios closed · 30 Chrome result cells.</strong> Outcome: 0 passed, 4 failed, 1 blocked. Every scoped scenario has a terminal result across the six requested sizes. <a href="#coverage">View coverage & gaps →</a></div>
+      <section class="workspace" aria-label="Review workspace">
+        <aside class="filters" aria-label="Finding filters">
+          <div class="search-wrap">
+            <label for="search">Search findings</label>
+            <input id="search" type="search" placeholder="ID, title, area…" autocomplete="off" />
+            <kbd>/</kbd>
+          </div>
+
+          <fieldset>
+            <legend>Type</legend>
+            <div class="filter-options" id="type-filters"></div>
+          </fieldset>
+          <fieldset>
+            <legend>Status</legend>
+            <div class="filter-options" id="status-filters"></div>
+          </fieldset>
+          <fieldset>
+            <legend>Severity</legend>
+            <div class="filter-options" id="severity-filters"></div>
+          </fieldset>
+
+          <div class="filter-note">
+            <span class="mini-orbit" aria-hidden="true"></span>
+            <p><strong>Update-ready</strong> Original findings are preserved separately from future fixes and browser retests.</p>
+            <a href="https://github.com/capitalinvestmentclub/support-operations-uat-report">Open report source →</a>
+          </div>
+        </aside>
+
+        <div class="results">
+          <div class="results-toolbar">
+            <div>
+              <p><strong id="result-count">—</strong> findings shown</p>
+              <span id="active-filter-copy">Full Support Operations record</span>
+            </div>
+            <label class="sort-control" for="sort">
+              Sort
+              <select id="sort">
+                <option value="severity">Severity</option>
+                <option value="id">Finding ID</option>
+                <option value="scenario">Scenario</option>
+                <option value="status">Status</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="list-heading" aria-hidden="true">
+            <span>Finding</span><span>Area</span><span>Status</span>
+          </div>
+          <div id="findings-list" class="findings-list" aria-live="polite"></div>
+          <div id="empty-state" class="empty-state" hidden>
+            <span aria-hidden="true">∅</span>
+            <h2>No findings match this view</h2>
+            <p>Clear a filter or search for a different ID, title, or scenario.</p>
+            <button class="quiet-button" id="clear-filters" type="button">Clear filters</button>
+          </div>
+        </div>
+      </section>
+<div class="report-appendix"><section><div class="section-title"><h2>What has been demonstrated</h2><span>Successful subchecks retained alongside failures</span></div><div class="success-grid"><article><h3>Messaging and notification delivery</h3><p>Controlled two-way messages persisted across role sessions, in-app notifications deep-linked correctly, and read state persisted across refresh.</p></article><article><h3>Feedback workflow</h3><p>Controlled feedback creation, assignment, status changes, response delivery, reopen validation, stale-write rejection and audit history were demonstrated.</p></article><article><h3>Responsive surfaces</h3><p>Messaging, notifications, feedback and support queue pages were rendered and inspected at all six requested Chrome sizes without global page overflow.</p></article></div></section>
+<section id="coverage"><div class="section-title"><h2>All 5 Support Operations scenarios</h2><span>Chrome × six sizes · 0 pending</span></div><p>The scoped Support Operations suite covers canonical Admin scenarios ADM-042 through ADM-046. Every scenario has a terminal PASS, FAIL or BLOCKED result; no scenario remains pending.</p><div class="table-wrap" tabindex="0" aria-label="Scrollable scenario coverage"><table><thead><tr><th>Scenario</th><th>Executed / observed</th><th>Required follow-up</th><th>Chrome six-size result</th></tr></thead><tbody id="scenarios"></tbody></table></div></section>
+<section><h2>Scoped blockers and remaining work</h2><div id="gaps" class="success-grid"></div></section>
+<section id="visual-evidence"><h2>Selected visual evidence</h2><p>Choose a finding, or open one from the register. Screens were inspected in the controlled Chrome session; this public report publishes sanitized conclusions without applicant documents or identity values.</p><label for="evidence-finding">Finding</label><select id="evidence-finding" aria-controls="selected-evidence"></select><div id="selected-evidence" aria-live="polite"></div></section>
+<section id="method"><h2>Method, provenance & score</h2><div class="success-grid"><article><h3>Execution contract</h3><p>Deployed Google Chrome UI with real API-backed state. No mocked responses, storage injection, database queries, hidden-control invocation, or external document workaround was used.</p></article><article><h3>Viewport scope</h3><p>Results were recorded at 360×800, 390×844, 768×1024, 1024×768, 1280×800 and 1440×900.</p></article><article><h3>Score</h3><p>Functional: <strong>3/10</strong><br>Rendered UX: <strong>6/10</strong><br>Final UAT score: <strong>3/10</strong>. The lower score applies because required delivery, lifecycle and cross-case controls are missing or unreliable.</p></article></div><h3>Source records</h3><p>The reusable source scenarios are ADM-042 through ADM-046 under <code>tests/e2e/admin/</code>. Private browser and inbox evidence remains in the webapp test workspace; this public report contains sanitized findings only.</p><h3>Publication history</h3><p>Revision 1 · 12 Sep 2026: five-scenario Support Operations Chrome campaign published using the established CIC UAT report template.</p><h3>Release decision</h3><p>Not go-live ready. Fix the three high-severity findings, resolve the medium workflow defects, supply the blocked support/media fixtures, then rerun the same 30-cell Chrome matrix.</p></section>
+</div>
+    </main>
+
+    <dialog id="finding-dialog" class="finding-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-shell">
+        <header class="dialog-header">
+          <div>
+            <p id="dialog-kicker" class="eyebrow"></p>
+            <h2 id="dialog-title"></h2>
+          </div>
+          <button class="icon-button" id="dialog-close" type="button" aria-label="Close finding">
+            <span aria-hidden="true">×</span>
+          </button>
+        </header>
+        <div id="dialog-content" class="dialog-content"></div>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<footer class="report-footer">Published by Capital Investment Club · Support Operations Chrome UAT · <a href="https://capitalinvestmentclub.github.io/pitcher-uat-report/">Established report template</a><br>Revision 1: 5 scenarios closed across six Chrome sizes; final score 3/10.</footer><script src="data.js?v=2"></script><script src="retest.js?v=2"></script><script src="app.js?v=2"></script></body></html>
