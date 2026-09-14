@@ -43,6 +43,7 @@
       repair.append(el('h3', 'Repair batch · ' + run.repairBatch.runId));
       repair.append(el('p', run.repairBatch.state));
       repair.append(el('p', run.repairBatch.scope));
+      if (run.repairBatch.releaseGate) repair.append(el('p', run.repairBatch.releaseGate));
       repair.append(el('p', 'Merge: ' + run.repairBatch.mergeStatus + ' · Deployment: ' + run.repairBatch.deploymentStatus + ' · Cloud retest: ' + run.repairBatch.cloudRetestStatus));
       for (const [service, release] of Object.entries(run.repairBatch.deployments || {})) repair.append(el('p', service + ': ' + release.version + ' · ' + release.commit));
       const releases = el('p', 'Release evidence:'); evidenceLinks(releases, run.repairBatch.pullRequests); repair.append(releases);
