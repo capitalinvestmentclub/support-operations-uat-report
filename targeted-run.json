@@ -1,4 +1,48 @@
 {
+  "repairBatch": {
+    "runId": "2026-09-14-confirmed-failure-repair",
+    "state": "LOCAL VERIFIED — independent review approval required; not merged or deployed",
+    "executionMode": "real-api-local",
+    "browser": "Google Chrome",
+    "sizes": [
+      "360×800",
+      "390×844",
+      "768×1024",
+      "1024×768",
+      "1280×800",
+      "1440×900"
+    ],
+    "mergeStatus": "REVIEW_APPROVAL_REQUIRED",
+    "deploymentStatus": "PENDING",
+    "cloudRetestStatus": "PENDING",
+    "frontendTests": "Final candidate: 632 suites / 4,943 tests passed; production build passed. Final original-refund real-API Chrome check passed at all six exact sizes.",
+    "apiTests": "Prior complete reconciliation: 468 suites / 5,565 assertions passed; latest API base and refund delta: 5 suites / 82 assertions passed. Separate runs, not one new full-suite execution.",
+    "scope": "Readiness update only. Existing deployed findings and per-size results below remain the last published cloud outcomes until exact-release browser retesting is supplied.",
+    "findings": [
+      {
+        "id": "SUP-F008",
+        "classification": "PRODUCT_FIX_LOCAL_VERIFIED",
+        "summary": "Changed behavior passed focused regression and real API-backed Chrome local checks at all six measured sizes.",
+        "cloudRetestStatus": "PENDING"
+      }
+    ],
+    "updatedAt": "2026-09-14T16:38:05.179Z",
+    "candidates": {
+      "webapp": "b99da21cf757593a3f5419086022556b7965e9b3",
+      "webapi": "5cad07e01717ba8d8e83168caca0aa4fdf064257"
+    },
+    "pullRequests": [
+      {
+        "url": "https://github.com/capitalinvestmentclub/webapp/pull/2342",
+        "label": "Frontend PR #2342 — checks running; independent review required"
+      },
+      {
+        "url": "https://github.com/capitalinvestmentclub/webapi/pull/737",
+        "label": "API PR #737 — required checks passed; independent review required"
+      }
+    ],
+    "releaseGate": "API normal merge denied by required independent approval. Frontend required checks still running at this update. Neither candidate is a deployed version. Prior cloud outcomes remain unchanged."
+  },
   "runId": "2026-09-14-retest45",
   "state": "RETEST PARTIAL — all 45 dispositioned; incomplete workflows explicitly blocked or partial",
   "updatedAt": "2026-09-14T07:08:29.535Z",

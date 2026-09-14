@@ -37,6 +37,18 @@
     section.setAttribute('aria-label', 'Latest targeted deployed retest');
     section.append(el('h2', 'Targeted deployed retest · ' + run.runId));
     section.append(el('p', run.scope));
+    if (run.repairBatch) {
+      const repair = el('aside'); repair.className = 'campaign-note';
+      repair.setAttribute('aria-label', 'Repair batch delivery status');
+      repair.append(el('h3', 'Repair batch · ' + run.repairBatch.runId));
+      repair.append(el('p', run.repairBatch.state));
+      repair.append(el('p', run.repairBatch.scope));
+      repair.append(el('p', 'Merge: ' + run.repairBatch.mergeStatus + ' · Deployment: ' + run.repairBatch.deploymentStatus + ' · Cloud retest: ' + run.repairBatch.cloudRetestStatus));
+      for (const [service, release] of Object.entries(run.repairBatch.deployments || {})) repair.append(el('p', service + ': ' + release.version + ' · ' + release.commit));
+      const releases = el('p', 'Release evidence:'); evidenceLinks(releases, run.repairBatch.pullRequests); repair.append(releases);
+      for (const finding of run.repairBatch.findings || []) repair.append(el('p', finding.id + ' · ' + finding.classification + ' — ' + finding.summary));
+      section.append(repair);
+    }
     section.append(el('p', 'Run status: ' + run.state + '. Updated: ' + (run.updatedAt || 'Awaiting execution results') + '. Chrome only; functional journeys are tested once and responsive checks reuse records across six sizes.'));
     labelHistoricalBaseline();
     document.getElementById('latest-retest-navigation')?.remove();

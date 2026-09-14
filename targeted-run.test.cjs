@@ -65,3 +65,17 @@ test('targeted report renders separately without altering historical data or acc
   assert.match(w.document.querySelector('#historical-baseline-label').textContent, /not current retest outcomes/);
   w.close();
 });
+
+test('repair readiness is visible but never overwrites deployed outcomes', () => {
+  const dom = new JSDOM(fs.readFileSync('index.html','utf8'), {runScripts:'outside-only'});
+  dom.window.fetch = () => new Promise(() => {});
+  vm.runInContext(fs.readFileSync('targeted-run.js','utf8'), dom.getInternalVMContext());
+  const fixture = JSON.parse(JSON.stringify(run));
+  fixture.repairBatch = {runId:'ready-only',state:'LOCAL VERIFIED',scope:'Not a deployed retest',mergeStatus:'PENDING',deploymentStatus:'PENDING',cloudRetestStatus:'PENDING',findings:[{id:'example',classification:'TEST_FIXTURE_CORRECTED',summary:'Historical seed was not backfilled.'}]};
+  const before = JSON.stringify(fixture.findings);
+  const section = dom.window.renderTargetedRetest(fixture);
+  assert.match(section.querySelector('[aria-label="Repair batch delivery status"]').textContent, /Cloud retest: PENDING/);
+  assert.match(section.textContent, /Historical seed was not backfilled/);
+  assert.equal(JSON.stringify(fixture.findings), before);
+  dom.window.close();
+});
