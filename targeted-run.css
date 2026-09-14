@@ -1,4 +1,6 @@
 /* Scoped extension: preserve the established historical report template. */
+#latest-retest-navigation, #historical-counter-label, #historical-baseline-label { padding: 1rem; overflow-wrap: anywhere; }
+#latest-retest-navigation { border: 2px solid var(--line); border-radius: .5rem; }
 #targeted-retest-run { overflow-wrap: anywhere; }
 #targeted-retest-run article { margin: 1.25rem 0; padding: 1rem; border: 1px solid var(--line); border-radius: .5rem; }
 #targeted-retest-run h3 { font-size: 1rem; margin-top: 0; }

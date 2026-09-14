@@ -10,6 +10,27 @@
       const link = el('a', item.label || 'Evidence'); link.href = item.url; target.append(' ', link);
     });
   };
+  // Preserve original campaign values, but never present them as current retest totals.
+  const labelHistoricalBaseline = () => {
+    document.querySelector('.metrics')?.setAttribute('aria-label', 'Historical campaign baseline counters');
+    document.querySelector('.release-signal')?.setAttribute('aria-label', 'Historical campaign baseline assessment');
+    const signalLabel = document.querySelector('.release-signal small');
+    if (signalLabel) signalLabel.textContent = 'HISTORICAL CAMPAIGN BASELINE';
+    const metrics = document.querySelector('.metrics');
+    if (metrics && !document.getElementById('historical-counter-label')) {
+      const label = el('p', 'HISTORICAL CAMPAIGN BASELINE · original counters, not latest retest totals');
+      label.id = 'historical-counter-label'; label.className = 'campaign-note';
+      metrics.insertAdjacentElement('beforebegin', label);
+    }
+    const workspace = document.querySelector('.workspace');
+    workspace?.setAttribute('aria-label', 'Historical campaign baseline findings');
+    if (workspace && !document.getElementById('historical-baseline-label')) {
+      const note = el('p', 'HISTORICAL CAMPAIGN BASELINE — the counters, filters and original finding statuses below preserve the original assessment. They are not current retest outcomes.');
+      note.id = 'historical-baseline-label'; note.className = 'campaign-note';
+      workspace.insertAdjacentElement('beforebegin', note);
+    }
+  };
+  labelHistoricalBaseline();
   window.renderTargetedRetest = run => {
     document.getElementById('targeted-retest-run')?.remove();
     const section = el('section'); section.id = 'targeted-retest-run'; section.className = 'campaign-note report-appendix';
@@ -17,6 +38,14 @@
     section.append(el('h2', 'Targeted deployed retest · ' + run.runId));
     section.append(el('p', run.scope));
     section.append(el('p', 'Run status: ' + run.state + '. Updated: ' + (run.updatedAt || 'Awaiting execution results') + '. Chrome only; functional journeys are tested once and responsive checks reuse records across six sizes.'));
+    labelHistoricalBaseline();
+    document.getElementById('latest-retest-navigation')?.remove();
+    const latest = el('aside'); latest.id = 'latest-retest-navigation'; latest.className = 'campaign-note';
+    latest.setAttribute('aria-label', 'Latest retest results');
+    latest.append(el('strong', 'LATEST RETEST · ' + run.runId));
+    latest.append(el('p', run.state + '. Original counters and finding statuses below are the HISTORICAL CAMPAIGN BASELINE, not current results.'));
+    const jump = el('a', 'View latest targeted results and remaining coverage →'); jump.href = '#targeted-retest-run'; latest.append(jump);
+    document.querySelector('main')?.prepend(latest);
     const findings = run.findings || [];
     const counts = Object.fromEntries(statuses.map(status => [status, findings.filter(row => row.status === status).length]));
     section.append(el('p', 'Functional outcomes — ' + statuses.map(status => status + ': ' + counts[status]).join(' · ')));

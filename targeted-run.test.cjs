@@ -57,5 +57,11 @@ test('targeted report renders separately without altering historical data or acc
   assert.ok(w.document.querySelector('script[src^="targeted-run.js"]'));
   w.renderTargetedRetest(run);
   assert.equal(w.document.querySelectorAll('#targeted-retest-run').length,1);
+  assert.equal(w.document.querySelectorAll('#latest-retest-navigation').length,1);
+  assert.match(w.document.querySelector('#latest-retest-navigation').textContent, /HISTORICAL CAMPAIGN BASELINE, not current results/);
+  assert.equal(w.document.querySelector('#latest-retest-navigation a').getAttribute('href'), '#targeted-retest-run');
+  assert.match(w.document.querySelector('.metrics').getAttribute('aria-label'), /Historical campaign baseline/);
+  assert.equal(w.document.querySelector('.release-signal small').textContent, 'HISTORICAL CAMPAIGN BASELINE');
+  assert.match(w.document.querySelector('#historical-baseline-label').textContent, /not current retest outcomes/);
   w.close();
 });
