@@ -26,10 +26,16 @@ test('targeted run has exact scope, no silent missing responsive cells and no un
     assert.ok(!ids.has(finding.id)); ids.add(finding.id);
     assert.ok(['PASS','FAIL','BLOCKED','PARTIAL','NOT RUN'].includes(finding.status));
     assert.deepEqual(finding.responsive.map(cell => cell.size), sizes);
-    if (finding.status !== 'NOT RUN') { assert.ok(finding.steps.length); assert.ok(finding.evidence.length); }
+    if (finding.status !== 'NOT RUN') {
+      if (finding.evidencePublication === 'WITHHELD_PRIVACY_REVIEW') { assert.ok(finding.summary.length > 20); assert.ok(finding.limitations.length > 20); assert.equal(finding.evidence.length, 0); assert.match(run.state, /PARTIAL/); }
+      else { assert.ok(finding.steps.length); assert.ok(finding.evidence.length); }
+    }
     for (const cell of finding.responsive) {
       assert.ok(['PASS','FAIL','BLOCKED','PARTIAL','NOT RUN'].includes(cell.status));
-      if (['PASS','FAIL','PARTIAL'].includes(cell.status)) assert.ok(cell.evidence.length);
+      if (['PASS','FAIL','PARTIAL'].includes(cell.status)) {
+        if (finding.evidencePublication === 'WITHHELD_PRIVACY_REVIEW') { assert.ok(cell.summary.length > 20); assert.equal(cell.evidence.length, 0); }
+        else assert.ok(cell.evidence.length);
+      }
     }
   }
 });
