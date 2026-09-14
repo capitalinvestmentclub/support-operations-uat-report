@@ -1,0 +1,12 @@
+/* Scoped extension: preserve the established historical report template. */
+#targeted-retest-run { overflow-wrap: anywhere; }
+#targeted-retest-run article { margin: 1.25rem 0; padding: 1rem; border: 1px solid var(--line); border-radius: .5rem; }
+#targeted-retest-run h3 { font-size: 1rem; margin-top: 0; }
+#targeted-retest-run .cells { grid-template-columns: repeat(2, minmax(0, 1fr)); min-width: 0; }
+#targeted-retest-run .cells span { white-space: normal; overflow-wrap: anywhere; font-size: .7rem; }
+#targeted-retest-run li { margin-bottom: .35rem; }
+#targeted-retest-run details { margin-top: .75rem; }
+@media (max-width: 600px) {
+  #targeted-retest-run { margin-left: 3vw; margin-right: 3vw; padding-left: 0; padding-right: 0; }
+  #targeted-retest-run .cells { grid-template-columns: minmax(0, 1fr); }
+}
