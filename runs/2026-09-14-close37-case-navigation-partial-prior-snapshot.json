@@ -86,10 +86,10 @@
     },
     "cloudRetestSummary": "GRT020-BAL-001 PASS: original terminated grant shows its existing USD -1 refund, USD +1 contribution and zero available/current balance after reload. Six exact measured Chrome CSS viewports passed. No fresh financial transaction was executed; other cloud retests are pending."
   },
-  "runId": "2026-09-14-close37-case-navigation-partial",
-  "state": "RETEST PARTIAL — completed targeted batch published; remaining findings retain their latest recorded outcomes",
-  "updatedAt": "2026-09-15T00:53:41.302Z",
-  "scope": "Chrome-only targeted defect acceptance on the recorded deployed versions. New results are limited to explicitly supplied findings and six measured CSS sizes. Historical scenarios and unexecuted lifecycle branches are not promoted to PASS.",
+  "runId": "2026-09-14-retest45",
+  "state": "RETEST PARTIAL — all 45 dispositioned; incomplete workflows explicitly blocked or partial",
+  "updatedAt": "2026-09-14T07:08:29.535Z",
+  "scope": "Chrome-only targeted retest of the 45 originally unclosed critical/high defects. Dispositioned does not mean fully executed: blocked, partial and unexecuted viewport checks remain explicit. Historical campaign findings remain unchanged. Targeted PASS does not assert broader unexecuted lifecycle coverage.",
   "frontend": "https://planar-truck-361704.uc.r.appspot.com",
   "api": "https://cicdevapi.uc.r.appspot.com",
   "browser": "Google Chrome",
@@ -263,209 +263,58 @@
     {
       "id": "SUP-F008",
       "title": "Support, moderation and feedback cases cannot be linked",
-      "status": "PARTIAL",
-      "summary": "All18 normal Support, Feedback and Moderation source-control journeys at six measured Chrome sizes reached existing CASE-20260914-0BDDAF, closed/version17, without duplicate creation. Shared1440 reload retained canonical links and immutable history. Feedback1024 layout readable. Full acceptance remains PARTIAL with explicit linking/authorization/reload limits.",
+      "status": "FAIL",
+      "summary": "Fresh source handoff regression remains: Support Link operational case, Feedback Link operational case and Moderation Open linked case all open a new-case form despite their canonical source IDs already being linked to CASE-20260914-0BDDAF. The dialog has no existing-case selector. Support and moderation handoff dialogs were reviewed at all six sizes. Feedback selected-detail still collapses to a single-character column at 1024x768, with workflow controls clipped on the right.",
       "steps": [
-        "Open controlled Support, Feedback and Moderation source details",
-        "Click Link operational case or Open linked case normally",
-        "Confirm same existing case, closed/version17 and no new-case dialog"
+        "From the controlled case, open canonical support source, choose PIT032 synthetic callback View, and follow Link operational case.",
+        "Observe new-case form containing already-linked support source; inspect six sizes, cancel without creating duplicate.",
+        "Open canonical feedback source; inspect 1024px selected detail and follow Link operational case; observe new-case form for already-linked feedback source; cancel.",
+        "Open canonical moderation source; follow Open linked case on ASS-033 controlled thread; observe new-case form for already-linked moderation source.",
+        "Inspect moderation dialog at all six sizes; cancel and verify original case remains version17."
       ],
       "responsive": [
         {
           "size": "360×800",
-          "measuredCss": "360x800",
           "status": "PARTIAL",
-          "summary": "Three source-control navigation subchecks PASS; overall finding remains PARTIAL. No separate full destination reload claimed.",
-          "steps": [
-            "Open controlled Support, Feedback and Moderation source details",
-            "Click Link operational case or Open linked case normally",
-            "Confirm same existing case, closed/version17 and no new-case dialog"
-          ],
-          "evidence": [
-            {
-              "url": "assets/2026-09-14-close37-case-navigation-partial/cloud-support-existing-case-360.png",
-              "label": "Shared support destination 360×800; approved visual"
-            }
-          ],
-          "navigationStatus": "PASS",
-          "sourceControlExecutions": 3
+          "summary": "Rendered state inspected: Fresh source handoff regression remains: Support Link operational case, Feedback Link operational case and Moderation Open linked case all open a new-case form despite their canonical source IDs already being linked to CASE-20260914-0BDDAF. The dialog has no existing-case selector. Support and moderation handoff dialogs were reviewed at all six sizes. Feedback selected-detail still collapses to a single-character column at 1024x768, with workflow controls clipped on the right. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
         },
         {
           "size": "390×844",
-          "measuredCss": "390x844",
           "status": "PARTIAL",
-          "summary": "Three source-control navigation subchecks PASS; overall finding remains PARTIAL. No separate full destination reload claimed.",
-          "steps": [
-            "Open controlled Support, Feedback and Moderation source details",
-            "Click Link operational case or Open linked case normally",
-            "Confirm same existing case, closed/version17 and no new-case dialog"
-          ],
-          "evidence": [
-            {
-              "url": "assets/2026-09-14-close37-case-navigation-partial/cloud-support-existing-case-390.png",
-              "label": "Shared support destination 390×844; approved visual"
-            }
-          ],
-          "navigationStatus": "PASS",
-          "sourceControlExecutions": 3
+          "summary": "Rendered state inspected: Fresh source handoff regression remains: Support Link operational case, Feedback Link operational case and Moderation Open linked case all open a new-case form despite their canonical source IDs already being linked to CASE-20260914-0BDDAF. The dialog has no existing-case selector. Support and moderation handoff dialogs were reviewed at all six sizes. Feedback selected-detail still collapses to a single-character column at 1024x768, with workflow controls clipped on the right. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
         },
         {
           "size": "768×1024",
-          "measuredCss": "768x1024",
           "status": "PARTIAL",
-          "summary": "Three source-control navigation subchecks PASS; overall finding remains PARTIAL. No separate full destination reload claimed.",
-          "steps": [
-            "Open controlled Support, Feedback and Moderation source details",
-            "Click Link operational case or Open linked case normally",
-            "Confirm same existing case, closed/version17 and no new-case dialog"
-          ],
-          "evidence": [
-            {
-              "url": "assets/2026-09-14-close37-case-navigation-partial/cloud-support-existing-case-768.png",
-              "label": "Shared support destination 768×1024; approved visual"
-            }
-          ],
-          "navigationStatus": "PASS",
-          "sourceControlExecutions": 3
+          "summary": "Rendered state inspected: Fresh source handoff regression remains: Support Link operational case, Feedback Link operational case and Moderation Open linked case all open a new-case form despite their canonical source IDs already being linked to CASE-20260914-0BDDAF. The dialog has no existing-case selector. Support and moderation handoff dialogs were reviewed at all six sizes. Feedback selected-detail still collapses to a single-character column at 1024x768, with workflow controls clipped on the right. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
         },
         {
           "size": "1024×768",
-          "measuredCss": "1024x768",
           "status": "PARTIAL",
-          "summary": "Three source-control navigation subchecks PASS; overall finding remains PARTIAL. No separate full destination reload claimed.",
-          "steps": [
-            "Open controlled Support, Feedback and Moderation source details",
-            "Click Link operational case or Open linked case normally",
-            "Confirm same existing case, closed/version17 and no new-case dialog"
-          ],
-          "evidence": [
-            {
-              "url": "assets/2026-09-14-close37-case-navigation-partial/cloud-support-existing-case-1024.png",
-              "label": "Shared support destination 1024×768; approved visual"
-            }
-          ],
-          "navigationStatus": "PASS",
-          "sourceControlExecutions": 3
+          "summary": "Rendered state inspected: Fresh source handoff regression remains: Support Link operational case, Feedback Link operational case and Moderation Open linked case all open a new-case form despite their canonical source IDs already being linked to CASE-20260914-0BDDAF. The dialog has no existing-case selector. Support and moderation handoff dialogs were reviewed at all six sizes. Feedback selected-detail still collapses to a single-character column at 1024x768, with workflow controls clipped on the right. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
         },
         {
           "size": "1280×800",
-          "measuredCss": "1280x800",
           "status": "PARTIAL",
-          "summary": "Three source-control navigation subchecks PASS; overall finding remains PARTIAL. No separate full destination reload claimed.",
-          "steps": [
-            "Open controlled Support, Feedback and Moderation source details",
-            "Click Link operational case or Open linked case normally",
-            "Confirm same existing case, closed/version17 and no new-case dialog"
-          ],
-          "evidence": [
-            {
-              "url": "assets/2026-09-14-close37-case-navigation-partial/cloud-support-existing-case-1280.png",
-              "label": "Shared support destination 1280×800; approved visual"
-            }
-          ],
-          "navigationStatus": "PASS",
-          "sourceControlExecutions": 3
+          "summary": "Rendered state inspected: Fresh source handoff regression remains: Support Link operational case, Feedback Link operational case and Moderation Open linked case all open a new-case form despite their canonical source IDs already being linked to CASE-20260914-0BDDAF. The dialog has no existing-case selector. Support and moderation handoff dialogs were reviewed at all six sizes. Feedback selected-detail still collapses to a single-character column at 1024x768, with workflow controls clipped on the right. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
         },
         {
           "size": "1440×900",
-          "measuredCss": "1440x900",
           "status": "PARTIAL",
-          "summary": "Three source-control navigation subchecks PASS; overall finding remains PARTIAL. Shared full reload/history PASS.",
-          "steps": [
-            "Open controlled Support, Feedback and Moderation source details",
-            "Click Link operational case or Open linked case normally",
-            "Confirm same existing case, closed/version17 and no new-case dialog"
-          ],
-          "evidence": [
-            {
-              "url": "assets/2026-09-14-close37-case-navigation-partial/cloud-support-existing-case-1440.png",
-              "label": "Shared support destination 1440×900; approved visual"
-            }
-          ],
-          "navigationStatus": "PASS",
-          "sourceControlExecutions": 3
+          "summary": "Rendered state inspected: Fresh source handoff regression remains: Support Link operational case, Feedback Link operational case and Moderation Open linked case all open a new-case form despite their canonical source IDs already being linked to CASE-20260914-0BDDAF. The dialog has no existing-case selector. Support and moderation handoff dialogs were reviewed at all six sizes. Feedback selected-detail still collapses to a single-character column at 1024x768, with workflow controls clipped on the right. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
         }
       ],
-      "evidence": [
-        {
-          "url": "assets/2026-09-14-close37-case-navigation-partial/cloud-support-existing-case-360.png",
-          "label": "Shared support destination 360×800; approved visual"
-        },
-        {
-          "url": "assets/2026-09-14-close37-case-navigation-partial/cloud-support-existing-case-390.png",
-          "label": "Shared support destination 390×844; approved visual"
-        },
-        {
-          "url": "assets/2026-09-14-close37-case-navigation-partial/cloud-support-existing-case-768.png",
-          "label": "Shared support destination 768×1024; approved visual"
-        },
-        {
-          "url": "assets/2026-09-14-close37-case-navigation-partial/cloud-support-existing-case-1024.png",
-          "label": "Shared support destination 1024×768; approved visual"
-        },
-        {
-          "url": "assets/2026-09-14-close37-case-navigation-partial/cloud-support-existing-case-1280.png",
-          "label": "Shared support destination 1280×800; approved visual"
-        },
-        {
-          "url": "assets/2026-09-14-close37-case-navigation-partial/cloud-support-existing-case-1440.png",
-          "label": "Shared support destination 1440×900; approved visual"
-        }
-      ],
-      "evidencePublication": "APPROVED_PUBLIC_EVIDENCE",
-      "limitations": "PARTIAL: legitimately unlinked record-to-existing-case linking remains unexecuted. Original18authorized source journeys had one shared1440 full reload, not18 per-cell reloads. Subsequent wrong-role denial passed six full reloads on newer reporting-only FE a2d485d; do not conflate execution versions. One unlinked source opened new-case form and was cancelled; central Link record flow remains to test, not a newly confirmed product defect. Only approved support destination and wrong-role1440 screenshots public; feedback/moderation captures private.",
-      "sourceRun": "2026-09-14-close37-case-navigation-partial",
-      "resultSource": "ops-results.json",
-      "deployments": {
-        "webapp": {
-          "version": "auth-34904805743-1",
-          "commit": "f5a4396d8cfbfd4c9abad90e44fc8aaf10b22ca4",
-          "status": "EXECUTION_VERSION"
-        },
-        "webapi": {
-          "version": "policy-34904590658-1",
-          "commit": "de320d4539f95415a84a3928fce77ee16633ca8f",
-          "status": "EXECUTION_VERSION"
-        },
-        "buildId": "rwHF6H9jwBWTjB7AhtWo1"
-      },
-      "currentRelease": {
-        "webapp": {
-          "version": "auth-34913946226-1",
-          "commit": "a2d485d57a0456f9e6f038cdfc73dfb467d9a9dd",
-          "promotionRun": "34914731385",
-          "buildId": "GPbRknNf6FXNHRtHOGCPF",
-          "status": "LIVE"
-        },
-        "webapi": {
-          "version": "policy-34904590658-1",
-          "commit": "de320d4539f95415a84a3928fce77ee16633ca8f",
-          "status": "LIVE"
-        },
-        "note": "Reporting-only frontend promotion followed these executions; no case test is attributed to the newer release."
-      },
-      "authorizationCheckpoint": {
-        "status": "PASS",
-        "sizes": [
-          "360x800",
-          "390x844",
-          "768x1024",
-          "1024x768",
-          "1280x800",
-          "1440x900"
-        ],
-        "actor": "Controlled Pitcher",
-        "behavior": "Six normal full reloads show role-unavailable heading and no Admin case contents.",
-        "webappCommit": "a2d485d57a0456f9e6f038cdfc73dfb467d9a9dd",
-        "webappVersion": "auth-34913946226-1",
-        "buildId": "GPbRknNf6FXNHRtHOGCPF",
-        "evidence": [
-          {
-            "url": "assets/2026-09-14-close37-case-navigation-partial/cloud-case-wrong-role-1440.png",
-            "label": "Shared wrong-role denial visual1440; six measured reloads executed"
-          }
-        ]
-      }
+      "evidence": [],
+      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
+      "limitations": "No duplicate was submitted. Linked references themselves persist and can be opened via the central case. Cross-role authorization and downstream enforcement remain unverified. Six-size coverage proves the displayed support/moderation destination dialogs; source clicks ran once each. Feedback readability was rechecked at 1024x768 only. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "ops-results.json"
     }
   ],
   "startedAt": "2026-09-14T04:05:58Z",
@@ -473,20 +322,5 @@
   "coverageContract": "Targeted risk-based defect retest: one functional journey per affected behavior, reused real records for responsive control/display checks. Not six independent complete journey executions; historical campaign scores unchanged.",
   "completedAt": "2026-09-14T04:54:48Z",
   "testingEndedAt": "2026-09-14T04:54:00Z",
-  "publicationNote": "Completed refers to this user-approved targeted run, not closure of every defect or the historical full campaign. Unfinished acceptance remains explicitly PARTIAL, BLOCKED or NOT RUN.",
-  "currentRelease": {
-    "webapp": {
-      "version": "auth-34913946226-1",
-      "commit": "a2d485d57a0456f9e6f038cdfc73dfb467d9a9dd",
-      "promotionRun": "34914731385",
-      "buildId": "GPbRknNf6FXNHRtHOGCPF",
-      "status": "LIVE"
-    },
-    "webapi": {
-      "version": "policy-34904590658-1",
-      "commit": "de320d4539f95415a84a3928fce77ee16633ca8f",
-      "status": "LIVE"
-    },
-    "note": "Reporting-only frontend promotion followed these executions; no case test is attributed to the newer release."
-  }
+  "publicationNote": "Completed refers to this user-approved targeted run, not closure of every defect or the historical full campaign. Unfinished acceptance remains explicitly PARTIAL, BLOCKED or NOT RUN."
 }
