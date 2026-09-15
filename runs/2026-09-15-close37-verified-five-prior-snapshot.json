@@ -1,7 +1,7 @@
 {
   "repairBatch": {
-    "runId": "2026-09-15-close37-verified-five",
-    "state": "MERGED AND LIVE — five additional findings six-size verified",
+    "runId": "2026-09-14-close37-release-deployed-pending",
+    "state": "MERGED AND LIVE — focused deployed acceptance pending",
     "executionMode": "cloud",
     "browser": "Google Chrome",
     "sizes": [
@@ -21,13 +21,13 @@
     "findings": [
       {
         "id": "SUP-F008",
-        "classification": "PRODUCT_FIX_CLOUD_VERIFIED",
-        "summary": "PASS: six controlled feedback records link to the same existing operational case, persist after reload and navigate back to that case without duplicate creation. The repaired feedback filter and detail controls remain contained and readable at all six measured Chrome sizes, including the original 1024x768 failure.",
-        "cloudRetestStatus": "PASS",
-        "status": "PASS"
+        "classification": "PRODUCT_FIX_LIVE_AWAITING_ACCEPTANCE",
+        "summary": "All18 normal Support, Feedback and Moderation source-control journeys at six measured Chrome sizes reached existing CASE-20260914-0BDDAF, closed/version17, without duplicate creation. Shared1440 reload retained canonical links and immutable history. Feedback1024 layout readable. Full acceptance remains PARTIAL with explicit linking/authorization/reload limits. Latest coordinated API and frontend repairs are merged and live, but no previous failure is relabelled: the Pitcher session cannot access admin-only feedback checks, the retained Seed fixture is unavailable, and the original historical award journal remains uncorrected.",
+        "cloudRetestStatus": "PARTIAL",
+        "status": "PARTIAL"
       }
     ],
-    "updatedAt": "2026-09-15T15:45:00Z",
+    "updatedAt": "2026-09-15T04:45:48.446Z",
     "candidates": {
       "webapp": "7bb5dfcf010415922688bb659e23992f7723bf83",
       "webapi": "45b94ccb37efeb612247254f646d0bc2c48a9ebf"
@@ -50,7 +50,7 @@
         "label": "Frontend exact-version live promotion — SUCCESS"
       }
     ],
-    "releaseGate": "Exact API, frontend and notification candidates are merged and live. Five affected findings passed deployed Chrome acceptance at all six required sizes; unrelated findings retain their previous status.",
+    "releaseGate": "API PR #740 and frontend PR #2354 are merged. Exact candidates are live. Local focused acceptance passed; cloud status remains unchanged where role access, a missing retained fixture, or the historical journal prevents complete verification.",
     "mergeCommits": {
       "webapp": "7bb5dfcf010415922688bb659e23992f7723bf83",
       "webapi": "45b94ccb37efeb612247254f646d0bc2c48a9ebf"
@@ -73,32 +73,29 @@
     "apiReviewDelta": "Final review corrections: 44 controller assertions and 66 organization assertions passed; three required API checks passed and zero unresolved review threads.",
     "deployments": {
       "webapp": {
-        "version": "auth-34997916768-1",
-        "commit": "f3e9e4900383c82ce9788e46b262bff0bb46d45f",
-        "promotionRun": "34999191056",
+        "version": "auth-34925818650-1",
+        "commit": "7bb5dfcf010415922688bb659e23992f7723bf83",
+        "buildId": "ZbjuA6xlxenb7ANeOMWjU",
+        "promotionRun": "34929292626",
+        "promotedAt": "2026-09-15T04:34:35Z",
         "status": "LIVE"
       },
       "webapi": {
-        "version": "policy-34996646914-3",
-        "commit": "76a7ea2c185d43e807c15cfe64025bdf1d8dfdf7",
-        "promotionRun": "34997744195",
-        "status": "LIVE"
-      },
-      "notificationservice": {
-        "version": "20260915t142904",
-        "commit": "7ce2937584b286e98ab3fd41f9e6487e4662613e",
-        "promotionRun": "34981810231",
+        "version": "policy-34928906727-1",
+        "commit": "45b94ccb37efeb612247254f646d0bc2c48a9ebf",
+        "promotionRun": "34929219077",
+        "promotedAt": "2026-09-15T04:33:13Z",
         "status": "LIVE"
       },
       "verifiedBy": "/root"
     },
-    "cloudRetestSummary": "ADM053-CFG-001, ADM046-LINK-001, GRT005-CFG-001, SUP-F008 and ADM051-WDR-001 are PASS where present in this report.",
+    "cloudRetestSummary": "Release delivery is complete. Acceptance remains intentionally open: the retained Seed fixture returned unavailable, Pitcher cannot enter admin feedback operations, and no historical award-journal mutation was authorized.",
     "previousBatchRunId": "2026-09-14-close37-case-navigation-partial"
   },
-  "runId": "2026-09-15-close37-verified-five",
-  "state": "RETEST PARTIAL — five additional critical/high findings are deployed and six-size Chrome verified",
-  "updatedAt": "2026-09-15T15:45:00Z",
-  "scope": "Latest targeted closure batch on the exact deployed versions. Only the five explicitly verified findings are promoted to PASS; every other finding retains its prior status and history.",
+  "runId": "2026-09-14-close37-release-deployed-pending",
+  "state": "RETEST PARTIAL — coordinated repairs are merged and live; focused cloud acceptance remains open",
+  "updatedAt": "2026-09-15T04:45:48.446Z",
+  "scope": "Chrome-only targeted defect acceptance on the recorded deployed versions. New results are limited to explicitly supplied findings and six measured CSS sizes. Historical scenarios and unexecuted lifecycle branches are not promoted to PASS.",
   "frontend": "https://planar-truck-361704.uc.r.appspot.com",
   "api": "https://cicdevapi.uc.r.appspot.com",
   "browser": "Google Chrome",
@@ -272,8 +269,8 @@
     {
       "id": "SUP-F008",
       "title": "Support, moderation and feedback cases cannot be linked",
-      "status": "PASS",
-      "summary": "PASS: six controlled feedback records link to the same existing operational case, persist after reload and navigate back to that case without duplicate creation. The repaired feedback filter and detail controls remain contained and readable at all six measured Chrome sizes, including the original 1024x768 failure.",
+      "status": "PARTIAL",
+      "summary": "All18 normal Support, Feedback and Moderation source-control journeys at six measured Chrome sizes reached existing CASE-20260914-0BDDAF, closed/version17, without duplicate creation. Shared1440 reload retained canonical links and immutable history. Feedback1024 layout readable. Full acceptance remains PARTIAL with explicit linking/authorization/reload limits.",
       "steps": [
         "Open controlled Support, Feedback and Moderation source details",
         "Click Link operational case or Open linked case normally",
@@ -283,13 +280,12 @@
         {
           "size": "360×800",
           "measuredCss": "360x800",
-          "status": "PASS",
-          "summary": "Open a controlled feedback record; Link it to the existing operational case; Reload and confirm the relationship; Open the linked case and verify responsive containment. PASS at measured CSS 360x800.",
+          "status": "PARTIAL",
+          "summary": "Three source-control navigation subchecks PASS; overall finding remains PARTIAL. No separate full destination reload claimed.",
           "steps": [
-            "Open a controlled feedback record",
-            "Link it to the existing operational case",
-            "Reload and confirm the relationship",
-            "Open the linked case and verify responsive containment"
+            "Open controlled Support, Feedback and Moderation source details",
+            "Click Link operational case or Open linked case normally",
+            "Confirm same existing case, closed/version17 and no new-case dialog"
           ],
           "evidence": [
             {
@@ -298,21 +294,17 @@
             }
           ],
           "navigationStatus": "PASS",
-          "sourceControlExecutions": 3,
-          "fixture": "Existing controlled case CASE-20260915-2C73FA and six synthetic feedback records",
-          "visualReview": "PASS: acceptance values and responsive containment were visibly reviewed at 360x800.",
-          "observedAt": "2026-09-15T15:45:00Z"
+          "sourceControlExecutions": 3
         },
         {
           "size": "390×844",
           "measuredCss": "390x844",
-          "status": "PASS",
-          "summary": "Open a controlled feedback record; Link it to the existing operational case; Reload and confirm the relationship; Open the linked case and verify responsive containment. PASS at measured CSS 390x844.",
+          "status": "PARTIAL",
+          "summary": "Three source-control navigation subchecks PASS; overall finding remains PARTIAL. No separate full destination reload claimed.",
           "steps": [
-            "Open a controlled feedback record",
-            "Link it to the existing operational case",
-            "Reload and confirm the relationship",
-            "Open the linked case and verify responsive containment"
+            "Open controlled Support, Feedback and Moderation source details",
+            "Click Link operational case or Open linked case normally",
+            "Confirm same existing case, closed/version17 and no new-case dialog"
           ],
           "evidence": [
             {
@@ -321,21 +313,17 @@
             }
           ],
           "navigationStatus": "PASS",
-          "sourceControlExecutions": 3,
-          "fixture": "Existing controlled case CASE-20260915-2C73FA and six synthetic feedback records",
-          "visualReview": "PASS: acceptance values and responsive containment were visibly reviewed at 390x844.",
-          "observedAt": "2026-09-15T15:45:00Z"
+          "sourceControlExecutions": 3
         },
         {
           "size": "768×1024",
           "measuredCss": "768x1024",
-          "status": "PASS",
-          "summary": "Open a controlled feedback record; Link it to the existing operational case; Reload and confirm the relationship; Open the linked case and verify responsive containment. PASS at measured CSS 768x1024.",
+          "status": "PARTIAL",
+          "summary": "Three source-control navigation subchecks PASS; overall finding remains PARTIAL. No separate full destination reload claimed.",
           "steps": [
-            "Open a controlled feedback record",
-            "Link it to the existing operational case",
-            "Reload and confirm the relationship",
-            "Open the linked case and verify responsive containment"
+            "Open controlled Support, Feedback and Moderation source details",
+            "Click Link operational case or Open linked case normally",
+            "Confirm same existing case, closed/version17 and no new-case dialog"
           ],
           "evidence": [
             {
@@ -344,21 +332,17 @@
             }
           ],
           "navigationStatus": "PASS",
-          "sourceControlExecutions": 3,
-          "fixture": "Existing controlled case CASE-20260915-2C73FA and six synthetic feedback records",
-          "visualReview": "PASS: acceptance values and responsive containment were visibly reviewed at 768x1024.",
-          "observedAt": "2026-09-15T15:45:00Z"
+          "sourceControlExecutions": 3
         },
         {
           "size": "1024×768",
           "measuredCss": "1024x768",
-          "status": "PASS",
-          "summary": "Open a controlled feedback record; Link it to the existing operational case; Reload and confirm the relationship; Open the linked case and verify responsive containment. PASS at measured CSS 1024x768.",
+          "status": "PARTIAL",
+          "summary": "Three source-control navigation subchecks PASS; overall finding remains PARTIAL. No separate full destination reload claimed.",
           "steps": [
-            "Open a controlled feedback record",
-            "Link it to the existing operational case",
-            "Reload and confirm the relationship",
-            "Open the linked case and verify responsive containment"
+            "Open controlled Support, Feedback and Moderation source details",
+            "Click Link operational case or Open linked case normally",
+            "Confirm same existing case, closed/version17 and no new-case dialog"
           ],
           "evidence": [
             {
@@ -367,21 +351,17 @@
             }
           ],
           "navigationStatus": "PASS",
-          "sourceControlExecutions": 3,
-          "fixture": "Existing controlled case CASE-20260915-2C73FA and six synthetic feedback records",
-          "visualReview": "PASS: acceptance values and responsive containment were visibly reviewed at 1024x768.",
-          "observedAt": "2026-09-15T15:45:00Z"
+          "sourceControlExecutions": 3
         },
         {
           "size": "1280×800",
           "measuredCss": "1280x800",
-          "status": "PASS",
-          "summary": "Open a controlled feedback record; Link it to the existing operational case; Reload and confirm the relationship; Open the linked case and verify responsive containment. PASS at measured CSS 1280x800.",
+          "status": "PARTIAL",
+          "summary": "Three source-control navigation subchecks PASS; overall finding remains PARTIAL. No separate full destination reload claimed.",
           "steps": [
-            "Open a controlled feedback record",
-            "Link it to the existing operational case",
-            "Reload and confirm the relationship",
-            "Open the linked case and verify responsive containment"
+            "Open controlled Support, Feedback and Moderation source details",
+            "Click Link operational case or Open linked case normally",
+            "Confirm same existing case, closed/version17 and no new-case dialog"
           ],
           "evidence": [
             {
@@ -390,21 +370,17 @@
             }
           ],
           "navigationStatus": "PASS",
-          "sourceControlExecutions": 3,
-          "fixture": "Existing controlled case CASE-20260915-2C73FA and six synthetic feedback records",
-          "visualReview": "PASS: acceptance values and responsive containment were visibly reviewed at 1280x800.",
-          "observedAt": "2026-09-15T15:45:00Z"
+          "sourceControlExecutions": 3
         },
         {
           "size": "1440×900",
           "measuredCss": "1440x900",
-          "status": "PASS",
-          "summary": "Open a controlled feedback record; Link it to the existing operational case; Reload and confirm the relationship; Open the linked case and verify responsive containment. PASS at measured CSS 1440x900.",
+          "status": "PARTIAL",
+          "summary": "Three source-control navigation subchecks PASS; overall finding remains PARTIAL. Shared full reload/history PASS.",
           "steps": [
-            "Open a controlled feedback record",
-            "Link it to the existing operational case",
-            "Reload and confirm the relationship",
-            "Open the linked case and verify responsive containment"
+            "Open controlled Support, Feedback and Moderation source details",
+            "Click Link operational case or Open linked case normally",
+            "Confirm same existing case, closed/version17 and no new-case dialog"
           ],
           "evidence": [
             {
@@ -413,10 +389,7 @@
             }
           ],
           "navigationStatus": "PASS",
-          "sourceControlExecutions": 3,
-          "fixture": "Existing controlled case CASE-20260915-2C73FA and six synthetic feedback records",
-          "visualReview": "PASS: acceptance values and responsive containment were visibly reviewed at 1440x900.",
-          "observedAt": "2026-09-15T15:45:00Z"
+          "sourceControlExecutions": 3
         }
       ],
       "evidence": [
@@ -445,9 +418,9 @@
           "label": "Shared support destination 1440×900; approved visual"
         }
       ],
-      "evidencePublication": "APPROVED_EXISTING_PUBLIC_EVIDENCE_PLUS_LIVE_VISUAL_REVIEW",
-      "limitations": "Synthetic feedback records and an existing controlled case only; no production customer case was changed.",
-      "sourceRun": "2026-09-15-close37-verified-five",
+      "evidencePublication": "APPROVED_PUBLIC_EVIDENCE",
+      "limitations": "PARTIAL: legitimately unlinked record-to-existing-case linking remains unexecuted. Original18authorized source journeys had one shared1440 full reload, not18 per-cell reloads. Subsequent wrong-role denial passed six full reloads on newer reporting-only FE a2d485d; do not conflate execution versions. One unlinked source opened new-case form and was cancelled; central Link record flow remains to test, not a newly confirmed product defect. Only approved support destination and wrong-role1440 screenshots public; feedback/moderation captures private.",
+      "sourceRun": "2026-09-14-close37-case-navigation-partial",
       "resultSource": "ops-results.json",
       "deployments": {
         "webapp": {
@@ -498,61 +471,6 @@
             "label": "Shared wrong-role denial visual1440; six measured reloads executed"
           }
         ]
-      },
-      "deploymentVerified": {
-        "webapp": {
-          "version": "auth-34997916768-1",
-          "commit": "f3e9e4900383c82ce9788e46b262bff0bb46d45f",
-          "promotionRun": "34999191056",
-          "status": "LIVE"
-        },
-        "webapi": {
-          "version": "policy-34996646914-3",
-          "commit": "76a7ea2c185d43e807c15cfe64025bdf1d8dfdf7",
-          "promotionRun": "34997744195",
-          "status": "LIVE"
-        },
-        "notificationservice": {
-          "version": "20260915t142904",
-          "commit": "7ce2937584b286e98ab3fd41f9e6487e4662613e",
-          "promotionRun": "34981810231",
-          "status": "LIVE"
-        },
-        "verifiedBy": "/root"
-      },
-      "latestVerification": {
-        "runId": "2026-09-15-close37-verified-five",
-        "observedAt": "2026-09-15T15:45:00Z",
-        "browser": "Google Chrome",
-        "sizes": [
-          "360x800",
-          "390x844",
-          "768x1024",
-          "1024x768",
-          "1280x800",
-          "1440x900"
-        ],
-        "deployments": {
-          "webapp": {
-            "version": "auth-34997916768-1",
-            "commit": "f3e9e4900383c82ce9788e46b262bff0bb46d45f",
-            "promotionRun": "34999191056",
-            "status": "LIVE"
-          },
-          "webapi": {
-            "version": "policy-34996646914-3",
-            "commit": "76a7ea2c185d43e807c15cfe64025bdf1d8dfdf7",
-            "promotionRun": "34997744195",
-            "status": "LIVE"
-          },
-          "notificationservice": {
-            "version": "20260915t142904",
-            "commit": "7ce2937584b286e98ab3fd41f9e6487e4662613e",
-            "promotionRun": "34981810231",
-            "status": "LIVE"
-          },
-          "verifiedBy": "/root"
-        }
       }
     }
   ],
