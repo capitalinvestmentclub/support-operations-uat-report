@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-09-17-defect-batch-deployed-retest",
+  "state": "COMPLETE",
+  "completedAt": "2026-09-18T10:10:00Z",
+  "environment": {
+    "frontend": {
+      "url": "https://auth-35306705473-1-dot-planar-truck-361704.uc.r.appspot.com",
+      "version": "auth-35306705473-1",
+      "mergeCommit": "d8777aae575f942514538381d54d3715aabf4b8c",
+      "trafficPromoted": false
+    },
+    "api": {
+      "url": "https://cicdevapi.uc.r.appspot.com",
+      "mergeCommit": "46a098ebcdcdebac39d1ba73569c793cd70a72fb",
+      "health": "/api/v1/health",
+      "postMergeTestRisk": "5 suites and 7 tests failed in workflow run 35281782628."
+    },
+    "notificationservice": {
+      "mergeCommit": "08b76889070663f7e7d57cad2003d5cd87378340"
+    }
+  },
+  "scope": {
+    "sourceFindingCount": 276,
+    "sourceRegisterSha256": "ab4d22a0e2082c3fd3c8ccca8533ff5e0e8b63a8c1b6e9c7d23ff2606eda03ee",
+    "uniqueScenarioFamilies": 96,
+    "browser": "Chrome",
+    "defaultViewport": "1792x976",
+    "viewportPolicy": "One representative desktop viewport unless the finding concerns responsiveness or the observed behavior warrants expansion.",
+    "mergePolicy": "Keep report changes local until every finding is PASS, FAIL, BLOCKED, OBSOLETE, DUPLICATE_COVERAGE, or PASSED_OVER."
+  },
+  "group": "Support Operations",
+  "summary": {
+    "total": 5,
+    "PASSED_OVER": 5
+  },
+  "findings": [
+    {
+      "id": "SUP-F003",
+      "group": "Support Operations",
+      "scenarioId": "SUP-002",
+      "severity": "MEDIUM",
+      "title": "Malformed template sample JSON silently previews default data",
+      "status": "PASSED_OVER",
+      "disposition": "INTERNAL_OPERATIONS_ACTOR_UNAVAILABLE",
+      "testedAt": "2026-09-18T07:25:36.296Z",
+      "browser": "Chrome",
+      "viewport": "1792x976",
+      "targetUrl": "https://auth-35306705473-1-dot-planar-truck-361704.uc.r.appspot.com/admin",
+      "apiUrl": "https://cicdevapi.uc.r.appspot.com",
+      "evidence": [
+        "evidence/internal-operations/ACTOR-AUDIT/KYC-internal-actor-unavailable-1792x976.png",
+        "evidence/internal-operations/ACTOR-AUDIT/SUPPORT-internal-actor-unavailable-1792x976.png",
+        "evidence/internal-operations/ACTOR-AUDIT/KYC-SUPPORT-actor-boundary-result.json"
+      ],
+      "notes": "The authenticated Assessor exposes neither Reviewer nor Approver controls on the KYC dashboard; Notification Operations, Feedback Operations, and Admin command center reject the account role; The seven findings require internal KYC or Admin/Support actors and seeded operational records"
+    },
+    {
+      "id": "SUP-F004",
+      "group": "Support Operations",
+      "scenarioId": "SUP-002",
+      "severity": "MEDIUM",
+      "title": "Benign markup displays literal entity text in preview",
+      "status": "PASSED_OVER",
+      "disposition": "INTERNAL_OPERATIONS_ACTOR_UNAVAILABLE",
+      "testedAt": "2026-09-18T07:25:36.296Z",
+      "browser": "Chrome",
+      "viewport": "1792x976",
+      "targetUrl": "https://auth-35306705473-1-dot-planar-truck-361704.uc.r.appspot.com/admin",
+      "apiUrl": "https://cicdevapi.uc.r.appspot.com",
+      "evidence": [
+        "evidence/internal-operations/ACTOR-AUDIT/KYC-internal-actor-unavailable-1792x976.png",
+        "evidence/internal-operations/ACTOR-AUDIT/SUPPORT-internal-actor-unavailable-1792x976.png",
+        "evidence/internal-operations/ACTOR-AUDIT/KYC-SUPPORT-actor-boundary-result.json"
+      ],
+      "notes": "The authenticated Assessor exposes neither Reviewer nor Approver controls on the KYC dashboard; Notification Operations, Feedback Operations, and Admin command center reject the account role; The seven findings require internal KYC or Admin/Support actors and seeded operational records"
+    },
+    {
+      "id": "SUP-F005",
+      "group": "Support Operations",
+      "scenarioId": "SUP-003",
+      "severity": "MEDIUM",
+      "title": "Feedback launcher is absent on Admin portal pages despite enabled visibility",
+      "status": "PASSED_OVER",
+      "disposition": "INTERNAL_OPERATIONS_ACTOR_UNAVAILABLE",
+      "testedAt": "2026-09-18T07:25:36.296Z",
+      "browser": "Chrome",
+      "viewport": "1792x976",
+      "targetUrl": "https://auth-35306705473-1-dot-planar-truck-361704.uc.r.appspot.com/admin",
+      "apiUrl": "https://cicdevapi.uc.r.appspot.com",
+      "evidence": [
+        "evidence/internal-operations/ACTOR-AUDIT/KYC-internal-actor-unavailable-1792x976.png",
+        "evidence/internal-operations/ACTOR-AUDIT/SUPPORT-internal-actor-unavailable-1792x976.png",
+        "evidence/internal-operations/ACTOR-AUDIT/KYC-SUPPORT-actor-boundary-result.json"
+      ],
+      "notes": "The authenticated Assessor exposes neither Reviewer nor Approver controls on the KYC dashboard; Notification Operations, Feedback Operations, and Admin command center reject the account role; The seven findings require internal KYC or Admin/Support actors and seeded operational records"
+    },
+    {
+      "id": "SUP-F006",
+      "group": "Support Operations",
+      "scenarioId": "SUP-003",
+      "severity": "MEDIUM",
+      "title": "Feedback SLA date shifts to the prior local day",
+      "status": "PASSED_OVER",
+      "disposition": "INTERNAL_OPERATIONS_ACTOR_UNAVAILABLE",
+      "testedAt": "2026-09-18T07:25:36.296Z",
+      "browser": "Chrome",
+      "viewport": "1792x976",
+      "targetUrl": "https://auth-35306705473-1-dot-planar-truck-361704.uc.r.appspot.com/admin",
+      "apiUrl": "https://cicdevapi.uc.r.appspot.com",
+      "evidence": [
+        "evidence/internal-operations/ACTOR-AUDIT/KYC-internal-actor-unavailable-1792x976.png",
+        "evidence/internal-operations/ACTOR-AUDIT/SUPPORT-internal-actor-unavailable-1792x976.png",
+        "evidence/internal-operations/ACTOR-AUDIT/KYC-SUPPORT-actor-boundary-result.json"
+      ],
+      "notes": "The authenticated Assessor exposes neither Reviewer nor Approver controls on the KYC dashboard; Notification Operations, Feedback Operations, and Admin command center reject the account role; The seven findings require internal KYC or Admin/Support actors and seeded operational records"
+    },
+    {
+      "id": "SUP-F007",
+      "group": "Support Operations",
+      "scenarioId": "SUP-004",
+      "severity": "MEDIUM",
+      "title": "Support actionable count includes terminal records",
+      "status": "PASSED_OVER",
+      "disposition": "INTERNAL_OPERATIONS_ACTOR_UNAVAILABLE",
+      "testedAt": "2026-09-18T07:25:36.296Z",
+      "browser": "Chrome",
+      "viewport": "1792x976",
+      "targetUrl": "https://auth-35306705473-1-dot-planar-truck-361704.uc.r.appspot.com/admin",
+      "apiUrl": "https://cicdevapi.uc.r.appspot.com",
+      "evidence": [
+        "evidence/internal-operations/ACTOR-AUDIT/KYC-internal-actor-unavailable-1792x976.png",
+        "evidence/internal-operations/ACTOR-AUDIT/SUPPORT-internal-actor-unavailable-1792x976.png",
+        "evidence/internal-operations/ACTOR-AUDIT/KYC-SUPPORT-actor-boundary-result.json"
+      ],
+      "notes": "The authenticated Assessor exposes neither Reviewer nor Approver controls on the KYC dashboard; Notification Operations, Feedback Operations, and Admin command center reject the account role; The seven findings require internal KYC or Admin/Support actors and seeded operational records"
+    }
+  ]
+}
