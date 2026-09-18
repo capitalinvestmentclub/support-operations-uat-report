@@ -1,0 +1,44 @@
+{
+  "releaseId": "2026-09-17-defect-batch-276",
+  "updatedAt": "2026-09-18T04:34:00Z",
+  "state": "MERGED · CANDIDATES DEPLOYED · DEPLOYED UAT PENDING",
+  "reportEntriesLinked": 276,
+  "uatStatusesChanged": 0,
+  "scope": "Delivery-state update for the 276 across-board report entries previously classified unresolved. This is not a browser retest and does not change historical scores or finding outcomes.",
+  "acceptanceBoundary": "Code delivery is not UAT closure. Findings remain unresolved/not proven fixed until deployed Chrome retest against promoted/live revisions.",
+  "repositories": [
+    {
+      "name": "webapp",
+      "pullRequest": "https://github.com/capitalinvestmentclub/webapp/pull/2370",
+      "mergeCommit": "d8777aae575f942514538381d54d3715aabf4b8c",
+      "deliveryState": "CANDIDATE_DEPLOYED_NO_TRAFFIC",
+      "candidateVersion": "auth-35306705473-1",
+      "candidateUrl": "https://auth-35306705473-1-dot-planar-truck-361704.uc.r.appspot.com",
+      "deploymentRun": "https://github.com/capitalinvestmentclub/webapp/actions/runs/35306705473",
+      "testState": "PR gates passed; deployment workflow succeeded",
+      "uatState": "NOT RUN",
+      "note": "Candidate deployed with --no-promote; traffic promotion was skipped."
+    },
+    {
+      "name": "webapi",
+      "pullRequest": "https://github.com/capitalinvestmentclub/webapi/pull/753",
+      "mergeCommit": "46a098ebcdcdebac39d1ba73569c793cd70a72fb",
+      "deliveryState": "DEPLOYMENT_WORKFLOW_SUCCESS",
+      "deploymentRun": "https://github.com/capitalinvestmentclub/webapi/actions/runs/35281782294",
+      "postMergeTestRun": "https://github.com/capitalinvestmentclub/webapi/actions/runs/35281782628",
+      "testState": "POST-MERGE FULL TEST FAILED",
+      "uatState": "NOT RUN",
+      "note": "5 suites and 7 tests failed; a second shard was cancelled. Deployment success does not clear this test risk."
+    },
+    {
+      "name": "notificationservice",
+      "pullRequest": "https://github.com/capitalinvestmentclub/notificationservice/pull/149",
+      "mergeCommit": "08b76889070663f7e7d57cad2003d5cd87378340",
+      "deliveryState": "DEPLOYMENT_WORKFLOW_SUCCESS",
+      "deploymentRun": "https://github.com/capitalinvestmentclub/notificationservice/actions/runs/35281688626",
+      "testState": "PR CI passed; deployment workflow succeeded",
+      "uatState": "NOT RUN",
+      "note": "No deployed end-user notification journey has been rerun for this batch."
+    }
+  ]
+}
